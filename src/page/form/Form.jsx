@@ -55,15 +55,9 @@ const Form = () => {
   };
 
   return (
-
-
-
-
-<Box>
-  
-  
+    <Box>
       <Header title="CREATE USER" subTitle="Create a New User Profile" />
-  
+
       <Box
         onSubmit={handleSubmit(onSubmit)}
         component="form"
@@ -88,7 +82,7 @@ const Form = () => {
             label="First Name"
             variant="filled"
           />
-  
+
           <TextField
             error={Boolean(errors.lastName)}
             helperText={
@@ -102,17 +96,19 @@ const Form = () => {
             variant="filled"
           />
         </Stack>
-  
+
         <TextField
           error={Boolean(errors.email)}
           helperText={
-            Boolean(errors.email) ? "Please provide a valid email address" : null
+            Boolean(errors.email)
+              ? "Please provide a valid email address"
+              : null
           }
           {...register("email", { required: true, pattern: regEmail })}
           label="Email"
           variant="filled"
         />
-  
+
         <TextField
           error={Boolean(errors.ContactNumber)}
           helperText={
@@ -120,13 +116,16 @@ const Form = () => {
               ? "Please provide a valid Phone number"
               : null
           }
-          {...register("ContactNumber", { required: true, pattern: phoneRegExp })}
+          {...register("ContactNumber", {
+            required: true,
+            pattern: phoneRegExp,
+          })}
           label="Contact Number"
           variant="filled"
         />
         <TextField label="Adress 1" variant="filled" />
         <TextField label="Adress 2" variant="filled" />
-  
+
         <TextField
           variant="filled"
           id="outlined-select-currency"
@@ -140,7 +139,7 @@ const Form = () => {
             </MenuItem>
           ))}
         </TextField>
-  
+
         <Box sx={{ textAlign: "right" }}>
           <Button
             type="submit"
@@ -149,7 +148,7 @@ const Form = () => {
           >
             Create New User
           </Button>
-  
+
           <Snackbar
             anchorOrigin={{ vertical: "top", horizontal: "right" }}
             open={open}
@@ -162,13 +161,8 @@ const Form = () => {
           </Snackbar>
         </Box>
       </Box>
-  
-  
-</Box>
-
-
-
-);
+    </Box>
+  );
 };
 
 export default Form;

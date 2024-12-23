@@ -7,12 +7,10 @@ import Header from "../../components/Header";
 
 const Invoices = () => {
   return (
-<Box>
-  
-        <Header title="INVOICES" subTitle="List of Invoice Balances" />
-  
-  
-        <Box sx={{ height: 650,   mx: "auto" }}>
+    <Box>
+      <Header title="INVOICES" subTitle="List of Invoice Balances" />
+
+      <Box sx={{ height: 650, mx: "auto" }}>
         <DataGrid
           checkboxSelection
           slots={{
@@ -23,11 +21,7 @@ const Invoices = () => {
           columns={columns}
         />
       </Box>
-  
-  
-  
-</Box>
-
+    </Box>
   );
 };
 
